@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rogério Ulysses 70321 — Deputado Distrital | De São Sebastião, Por São Sebastião, Pelo DF</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-deep:#0a2540;
+    --navy:#123a63;
+    --navy-soft:#1f4d80;
+    --orange:#f2792e;
+    --orange-soft:#ffab6e;
+    --paper:#f6f4ef;
+    --ink:#0a2540;
+    --steel:#5c6b7a;
+    --line:rgba(10,37,64,0.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Archivo', sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{
+    font-family:'Barlow Condensed', sans-serif;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:0.01em;
+    line-height:0.95;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+
+  /* reduced motion */
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important;transition:none !important;}
+  }
+
+  /* ---------- NAV ---------- */
+  header.site{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(10,37,64,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 28px;max-width:1180px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:12px;color:#fff;}
+  .brand-num{
+    font-family:'Barlow Condensed',sans-serif;font-weight:800;
+    background:var(--orange);color:#0a2540;font-size:15px;
+    padding:3px 9px;border-radius:4px;letter-spacing:0.02em;
+  }
+  .brand-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:19px;text-transform:uppercase;letter-spacing:0.02em;}
+  nav.links{display:flex;gap:28px;}
+  nav.links a{color:#cfe0f2;font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;transition:color .2s;}
+  nav.links a:hover{color:var(--orange-soft);}
+  .nav-cta{
+    background:var(--orange);color:#0a2540;font-weight:700;font-size:13px;
+    padding:9px 18px;border-radius:30px;text-transform:uppercase;letter-spacing:0.03em;
+  }
+  .burger{display:none;background:none;border:0;color:#fff;font-size:26px;cursor:pointer;}
+
+  @media(max-width:860px){
+    nav.links, .nav-cta{display:none;}
+    .burger{display:block;}
+    .nav.open ~ .mobile-menu{display:flex;}
+  }
+  .mobile-menu{
+    display:none;flex-direction:column;background:var(--navy-deep);
+    padding:18px 28px 26px;gap:16px;
+  }
+  .mobile-menu a{color:#dce8f5;font-weight:600;text-transform:uppercase;font-size:15px;letter-spacing:.03em;}
+  .mobile-menu.show{display:flex;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;align-items:flex-end;
+    background:linear-gradient(180deg,var(--navy-deep) 0%,var(--navy) 55%,var(--navy-soft) 100%);
+    overflow:hidden;
+    padding-top:90px;
+  }
+  .hero-photo{
+    position:absolute;right:-40px;top:70px;bottom:0;width:56%;
+    background-image:url('images/hero.webp');
+    background-size:cover;background-position:top center;
+    mask-image:linear-gradient(to left, black 55%, transparent 100%);
+    -webkit-mask-image:linear-gradient(to left, black 55%, transparent 100%);
+    opacity:0.96;
+  }
+  .hero-route{
+    position:absolute;left:0;right:0;bottom:0;height:120px;
+    background:
+      repeating-linear-gradient(90deg, var(--orange) 0 46px, transparent 46px 74px);
+    opacity:0.12;
+  }
+  .hero-inner{
+    position:relative;z-index:2;
+    width:100%;
+    padding-bottom:80px;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    color:var(--orange-soft);font-weight:700;font-size:13px;
+    text-transform:uppercase;letter-spacing:0.14em;margin-bottom:22px;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--orange-soft);display:inline-block;}
+  .hero h1{
+    color:#fff;font-size:clamp(2.6rem,6.4vw,5.2rem);max-width:760px;
+  }
+  .hero h1 span{color:var(--orange);}
+  .hero p.lede{
+    color:#c9d9e8;font-family:'Archivo',sans-serif;font-weight:400;
+    font-size:clamp(1rem,1.6vw,1.2rem);max-width:520px;margin-top:22px;line-height:1.55;
+  }
+  .hero-actions{display:flex;flex-wrap:wrap;gap:16px;margin-top:38px;align-items:center;}
+  .btn-primary{
+    background:var(--orange);color:#0a2540;font-weight:700;
+    padding:15px 30px;border-radius:32px;font-size:14px;letter-spacing:.03em;
+    text-transform:uppercase;transition:transform .2s ease, box-shadow .2s ease;
+    box-shadow:0 8px 24px rgba(242,121,46,0.35);
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(242,121,46,0.45);}
+  .btn-ghost{
+    color:#fff;font-weight:600;font-size:14px;letter-spacing:.03em;text-transform:uppercase;
+    border-bottom:2px solid rgba(255,255,255,0.4);padding-bottom:4px;
+  }
+  .ballot{
+    display:flex;align-items:center;gap:14px;margin-top:46px;
+    padding-top:26px;border-top:1px solid rgba(255,255,255,0.15);max-width:460px;
+  }
+  .ballot .num{
+    font-family:'Barlow Condensed',sans-serif;font-weight:800;color:#fff;
+    font-size:2.6rem;line-height:1;
+  }
+  .ballot small{display:block;color:var(--orange-soft);font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-bottom:4px;}
+  .ballot .party{color:#9fb7cf;font-size:13px;line-height:1.4;}
+
+  /* ---------- SECTION HEADS ---------- */
+  .section{padding:110px 0;}
+  .section-head{max-width:640px;margin-bottom:64px;}
+  .section-head .eyebrow{color:var(--navy-soft);}
+  .section-head .eyebrow::before{background:var(--navy-soft);}
+  .section-head h2{font-size:clamp(2rem,4.4vw,3.2rem);color:var(--navy-deep);}
+  .section-head p{color:var(--steel);font-size:1.05rem;margin-top:16px;line-height:1.6;}
+  .bg-navy{background:var(--navy-deep);color:#fff;}
+  .bg-navy .section-head h2{color:#fff;}
+  .bg-navy .section-head p{color:#b9cbdd;}
+
+  /* ---------- ROTA / CONQUISTAS (signature element) ---------- */
+  .route-wrap{position:relative;padding-top:10px;}
+  .route-line{
+    position:absolute;top:34px;left:0;right:0;height:4px;
+    background:repeating-linear-gradient(90deg, var(--orange) 0 18px, transparent 18px 30px);
+    z-index:0;
+  }
+  @media(max-width:860px){
+    .route-line{display:none;}
+  }
+  .stops{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:36px;position:relative;z-index:1;
+  }
+  @media(max-width:860px){ .stops{grid-template-columns:1fr;gap:54px;} }
+  .stop{position:relative;}
+  .stop-marker{
+    width:68px;height:68px;border-radius:50%;
+    background:var(--paper);border:4px solid var(--orange);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Barlow Condensed',sans-serif;font-weight:800;color:var(--navy-deep);
+    font-size:14px;margin-bottom:26px;position:relative;z-index:2;
+  }
+  .stop-photo{
+    width:100%;aspect-ratio:4/3;border-radius:14px;overflow:hidden;margin-bottom:20px;
+    box-shadow:0 18px 40px rgba(10,37,64,0.18);
+  }
+  .stop-photo img{width:100%;height:100%;object-fit:cover;}
+  .stop-tag{
+    display:inline-block;background:var(--orange);color:var(--navy-deep);font-weight:700;
+    font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:5px 11px;
+    border-radius:20px;margin-bottom:12px;
+  }
+  .stop h3{font-size:1.6rem;color:var(--navy-deep);margin-bottom:10px;}
+  .stop p{color:var(--steel);font-size:.98rem;line-height:1.55;}
+
+  /* ---------- COMPROMISSO / BANNER ---------- */
+  .pledge{
+    display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;
+  }
+  @media(max-width:900px){ .pledge{grid-template-columns:1fr;} }
+  .pledge-art{
+    border-radius:18px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.45);
+  }
+  .pledge-art img{width:100%;display:block;}
+  .pledge-copy .eyebrow{color:var(--orange-soft);}
+  .pledge-copy .eyebrow::before{background:var(--orange-soft);}
+  .pledge-copy h2{color:#fff;font-size:clamp(2rem,4vw,2.8rem);margin-bottom:20px;}
+  .pledge-copy p{color:#c3d5e6;font-size:1.05rem;line-height:1.65;margin-bottom:16px;}
+  .pledge-list{list-style:none;margin-top:26px;display:flex;flex-direction:column;gap:14px;}
+  .pledge-list li{display:flex;gap:14px;align-items:flex-start;color:#dce8f5;font-size:.98rem;line-height:1.5;}
+  .pledge-list li::before{
+    content:"";flex:none;width:10px;height:10px;border-radius:50%;background:var(--orange);margin-top:6px;
+  }
+
+  /* ---------- SOBRE ---------- */
+  .about{display:grid;grid-template-columns:0.9fr 1.1fr;gap:70px;align-items:center;}
+  @media(max-width:900px){ .about{grid-template-columns:1fr;} }
+  .about-photo{
+    position:relative;border-radius:18px;overflow:hidden;
+    box-shadow:0 24px 50px rgba(10,37,64,0.2);
+  }
+  .about-photo img{width:100%;}
+  .about-copy p{color:var(--steel);font-size:1.05rem;line-height:1.7;margin-bottom:18px;}
+  .about-copy p strong{color:var(--navy-deep);}
+  .stat-row{display:flex;gap:40px;margin-top:36px;flex-wrap:wrap;}
+  .stat b{display:block;font-family:'Barlow Condensed',sans-serif;font-size:2.4rem;color:var(--orange);font-weight:800;line-height:1;}
+  .stat span{display:block;color:var(--steel);font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;margin-top:6px;}
+
+  /* ---------- VOTO ---------- */
+  .voto{
+    background:var(--paper);
+    text-align:center;padding:110px 0;
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  }
+  .voto h2{font-size:clamp(2rem,5vw,3.4rem);color:var(--navy-deep);margin-bottom:18px;}
+  .voto p{color:var(--steel);max-width:520px;margin:0 auto 40px;font-size:1.05rem;}
+  .voto-num{
+    display:inline-flex;flex-direction:column;align-items:center;
+    background:var(--navy-deep);color:#fff;border-radius:22px;
+    padding:34px 60px;position:relative;
+  }
+  .voto-num .digits{
+    font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(3.2rem,10vw,5.5rem);
+    letter-spacing:0.04em;color:var(--orange);line-height:1;
+  }
+  .voto-num small{text-transform:uppercase;letter-spacing:.14em;font-size:12px;color:#9fb7cf;margin-top:10px;font-weight:700;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--navy-deep);color:#c9d9e8;padding:64px 0 30px;}
+  .footer-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.1);}
+  .footer-brand .brand-name{color:#fff;}
+  .footer-brand p{margin-top:14px;color:#93a9be;font-size:.92rem;max-width:280px;line-height:1.5;}
+  .footer-links h4{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#7f97ac;margin-bottom:16px;}
+  .footer-links a{display:block;color:#dce8f5;margin-bottom:10px;font-size:.95rem;}
+  .footer-social{display:flex;gap:14px;margin-top:16px;}
+  .footer-social a{
+    width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,0.2);
+    display:flex;align-items:center;justify-content:center;font-size:15px;color:#fff;
+    transition:background .2s;
+  }
+  .footer-social a:hover{background:var(--orange);border-color:var(--orange);color:var(--navy-deep);}
+  .footer-bottom{
+    padding-top:26px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+    font-size:12px;color:#6f889e;
+  }
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav" id="nav">
+    <div class="brand">
+      <span class="brand-num">70</span>
+      <span class="brand-name">Rogério Ulysses</span>
+    </div>
+    <nav class="links">
+      <a href="#conquistas">Conquistas</a>
+      <a href="#compromisso">Compromissos</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#voto">Como votar</a>
+    </nav>
+    <a href="#voto" class="nav-cta">70321</a>
+    <button class="burger" id="burger" aria-label="Abrir menu">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#conquistas">Conquistas</a>
+    <a href="#compromisso">Compromissos</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#voto">Como votar</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-photo" role="img" aria-label="Rogério Ulysses em frente a escola e creche"></div>
+  <div class="hero-route"></div>
+  <div class="hero-inner wrap">
+    <span class="eyebrow">Deputado Distrital · Avante 70</span>
+    <h1>Quem já fez,<br><span>sabe fazer.</span></h1>
+    <p class="lede">De São Sebastião, por São Sebastião, pelo DF. Terminal de ônibus entregue, UPA construída, paradas de ônibus conquistadas — e muito mais pela frente.</p>
+    <div class="hero-actions">
+      <a href="#conquistas" class="btn-primary">Ver as conquistas</a>
+      <a href="#sobre" class="btn-ghost">Conhecer a trajetória</a>
+    </div>
+    <div class="ballot">
+      <div>
+        <small>Vote</small>
+        <div class="num">70321</div>
+      </div>
+      <div class="party">Rogério Ulysses<br>Deputado Distrital — Avante</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="conquistas">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">A rota de quem entrega</span>
+      <h2>Não é promessa. É obra entregue.</h2>
+      <p>Três paradas que já saíram do papel em São Sebastião — resultado de mandato presente, cobrando e acompanhando de perto cada etapa.</p>
+    </div>
+
+    <div class="route-wrap">
+      <div class="route-line"></div>
+      <div class="stops">
+        <div class="stop reveal">
+          <div class="stop-marker">01</div>
+          <div class="stop-photo"><img src="images/upa.jpg" alt="UPA - Unidade de Pronto Atendimento"></div>
+          <span class="stop-tag">Saúde</span>
+          <h3>UPA 24h</h3>
+          <p>Atuação direta pela construção da Unidade de Pronto Atendimento, levando saúde de urgência para perto de quem mais precisa.</p>
+        </div>
+        <div class="stop reveal">
+          <div class="stop-marker">02</div>
+          <div class="stop-photo"><img src="images/terminal.jpg" alt="Terminal de ônibus de São Sebastião"></div>
+          <span class="stop-tag">Mobilidade</span>
+          <h3>Terminal de ônibus</h3>
+          <p>Entrega do terminal de São Sebastião, organizando o transporte coletivo e encurtando o tempo de quem depende do ônibus todos os dias.</p>
+        </div>
+        <div class="stop reveal">
+          <div class="stop-marker">03</div>
+          <div class="stop-photo"><img src="images/hero.webp" alt="Rogério Ulysses em campanha"></div>
+          <span class="stop-tag">Mobilidade</span>
+          <h3>Paradas de ônibus</h3>
+          <p>Luta constante por paradas de ônibus dignas, com cobertura e segurança para quem espera o transporte todos os dias.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-navy" id="compromisso">
+  <div class="wrap">
+    <div class="pledge">
+      <div class="pledge-art reveal">
+        <img src="images/banner-agua.jpg" alt="Rogério Ulysses conversando com moradora sobre falta de água">
+      </div>
+      <div class="pledge-copy reveal">
+        <span class="eyebrow">Próxima parada</span>
+        <h2>Água em todos os bairros.</h2>
+        <p>Tem rua em São Sebastião que ainda espera a água chegar. Depois de entregar o terminal e a UPA, esse é o próximo compromisso: levar água a cada bairro, sem exceção.</p>
+        <ul class="pledge-list">
+          <li>Cobrança direta e permanente às concessionárias de abastecimento</li>
+          <li>Prioridade para as ruas e bairros ainda sem rede de água</li>
+          <li>Mandato de porta aberta, presente na rua, ouvindo cada morador</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="sobre">
+  <div class="wrap">
+    <div class="about">
+      <div class="about-photo reveal">
+        <img src="images/hero.webp" alt="Rogério Ulysses em frente a escola e creche de São Sebastião">
+      </div>
+      <div class="about-copy reveal">
+        <span class="eyebrow">Sobre Rogério</span>
+        <h2 style="color:var(--navy-deep);font-size:clamp(2rem,4vw,2.8rem);margin-bottom:22px;">Presença na rua, resultado na comunidade.</h2>
+        <p>Rogério Ulysses construiu sua trajetória em São Sebastião do jeito que se constrói confiança: <strong>aparecendo, cobrando e entregando.</strong> Não são projetos de gabinete — são a UPA que atende, o terminal que organiza o transporte e as paradas de ônibus que protegem quem espera todos os dias.</p>
+        <p>Agora, candidato a <strong>Deputado Distrital pelo Avante, número 70321</strong>, ele leva essa mesma prática para a Câmara Legislativa: de São Sebastião, por São Sebastião, pelo DF inteiro.</p>
+        <div class="stat-row">
+          <div class="stat"><b>01</b><span>UPA entregue</span></div>
+          <div class="stat"><b>02</b><span>Terminal de ônibus</span></div>
+          <div class="stat"><b>03</b><span>Paradas conquistadas</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="voto" id="voto">
+  <div class="wrap">
+    <h2 class="reveal">Quem já fez, merece continuar fazendo.</h2>
+    <p class="reveal">No dia da eleição, o número é simples de lembrar — assim como as obras que ele já deixou pela cidade.</p>
+    <div class="voto-num reveal">
+      <div class="digits">70321</div>
+      <small>Rogério Ulysses · Deputado Distrital</small>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand-name" style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;text-transform:uppercase;">Rogério Ulysses</div>
+        <p>Deputado Distrital · Avante 70321. De São Sebastião, por São Sebastião, pelo DF.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="WhatsApp">✆</a>
+          <a href="#" aria-label="Instagram">◎</a>
+          <a href="#" aria-label="Facebook">f</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Navegue</h4>
+        <a href="#conquistas">Conquistas</a>
+        <a href="#compromisso">Compromissos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#voto">Como votar</a>
+      </div>
+      <div class="footer-links">
+        <h4>Candidato</h4>
+        <span style="display:block;margin-bottom:10px;">Rogério Ulysses</span>
+        <span style="display:block;margin-bottom:10px;">Deputado Distrital — DF</span>
+        <span style="display:block;">Partido Avante — Nº 70321</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Rogério Ulysses 70321. Todos os direitos reservados.</span>
+      <span>CNPJ do candidato: 68.504.277/0001-95</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', () => menu.classList.toggle('show'));
+  document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', () => menu.classList.remove('show')));
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.15});
+  revealEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
